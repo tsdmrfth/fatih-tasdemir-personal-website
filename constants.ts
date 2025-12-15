@@ -1,11 +1,11 @@
-import { Project, Experience, SkillCategory } from './types';
+import { Project, Experience, SkillCategory } from './types'
 
 export const SOCIAL_LINKS = {
   github: "https://github.com/tsdmrfth",
   linkedin: "https://linkedin.com/in/fatih-tasdemir",
   email: "tsdmrfth@gmail.com",
   phone: "(+90) 505 001 0493"
-};
+}
 
 export const PROJECTS: Project[] = [
   {
@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
     ],
     link: "https://tsdmrfth-langtons-ant.netlify.app"
   }
-];
+]
 
 export const EXPERIENCE: Experience[] = [
   {
@@ -92,7 +92,7 @@ export const EXPERIENCE: Experience[] = [
       "Designed CI/CD pipelines significantly reducing deployment time."
     ]
   }
-];
+]
 
 export const SKILLS: SkillCategory[] = [
   {
@@ -109,6 +109,6 @@ export const SKILLS: SkillCategory[] = [
   },
   {
     category: "Domains & Strategy",
-    items: ["Algorithmic Trading", "DeFi / Cryptocurrency", "AI Agents & LLMs", "Improv Theatre (Adaptability)"]
+    items: ["Algorithmic Trading", "DeFi / Cryptocurrency", "AI Agents & LLMs"]
   }
-];
+]

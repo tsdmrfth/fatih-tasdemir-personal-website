@@ -1,94 +1,99 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fatih Tasdemir | Elite Software Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              mono: ['JetBrains Mono', 'monospace'],
-            },
-            colors: {
-              cyber: {
-                black: '#050505',
-                dark: '#0a0a0f',
-                panel: '#12121a',
-                cyan: '#00f0ff',
-                magenta: '#ff003c',
-                yellow: '#fcee0a',
-                dim: 'rgba(0, 240, 255, 0.1)',
-              }
-            },
-            backgroundImage: {
-              'grid-pattern': "linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px)",
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fatih Tasdemir | Elite Software Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            cyber: {
+              black: '#050505',
+              dark: '#0a0a0f',
+              panel: '#12121a',
+              cyan: '#00f0ff',
+              magenta: '#ff003c',
+              yellow: '#fcee0a',
+              dim: 'rgba(0, 240, 255, 0.1)',
             }
+          },
+          backgroundImage: {
+            'grid-pattern': "linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px)",
+          },
+          keyframes: {
+            shimmer: {
+              '0%': { backgroundPosition: '200% center' },
+              '100%': { backgroundPosition: '-200% center' },
+            },
+          },
+          animation: {
+            shimmer: 'shimmer 8s linear infinite',
           }
         }
       }
-    </script>
-    <style>
-      body {
-        background-color: #050505;
-        color: #e0e0e0;
-        overflow-x: hidden;
-      }
-      .scanline {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: linear-gradient(
-          to bottom,
+    }
+  </script>
+  <style>
+    body {
+      background-color: #050505;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+
+    .scanline {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(to bottom,
           rgba(255, 255, 255, 0),
           rgba(255, 255, 255, 0) 50%,
           rgba(0, 0, 0, 0.1) 50%,
-          rgba(0, 0, 0, 0.1)
-        );
-        background-size: 100% 4px;
-        pointer-events: none;
-        z-index: 50;
-        opacity: 0.3;
-      }
-      .glow-text {
-        text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-      }
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0a0a0f;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #1f2937;
-        border-radius: 2px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #00f0ff;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.560.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
-    "react": "https://esm.sh/react@^19.2.1",
-    "react/": "https://esm.sh/react@^19.2.1/",
-    "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
-  }
-}
-</script>
-</head>
-  <body>
-    <div id="root"></div>
+          rgba(0, 0, 0, 0.1));
+      background-size: 100% 4px;
+      pointer-events: none;
+      z-index: 50;
+      opacity: 0.3;
+    }
+
+    .glow-text {
+      text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0f;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #1f2937;
+      border-radius: 2px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00f0ff;
+    }
+  </style>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
   </body>
+
 </html>
