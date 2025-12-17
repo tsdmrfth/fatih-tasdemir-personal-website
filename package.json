@@ -9,12 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^12.23.26",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.560.0",
-    "react-dom": "^19.2.1",
     "react": "^19.2.1",
-    "framer-motion": "^12.23.26"
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.21",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",
