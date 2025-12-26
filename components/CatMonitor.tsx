@@ -18,25 +18,16 @@ export const CatMonitor: React.FC<CatMonitorProps> = ({
 }) => {
     const controls = useAnimation()
     const [isBlinking, setIsBlinking] = useState(false)
-    // For sleeping cats, eyes start closed (scaleY: 1) and open (scaleY: 0) once
-    // const [isSleeping, setIsSleeping] = useState(type === 'sleeping') // This state is no longer needed
 
-    // Initial Entrance Sequence
     useEffect(() => {
         const sequence = async () => {
             if (type !== 'monitoring') {
-                // For sleeping cats, just set them visible immediately without animation
-                await controls.set({ opacity: opacity })
+                controls.set({ opacity: opacity })
                 return
             }
 
-            // Start hidden with 0 opacity
-            await controls.set({ opacity: 0 })
-
-            // Delay before appearing
+            controls.set({ opacity: 0 })
             await new Promise(r => setTimeout(r, delay))
-
-            // Fade in smoothly
             await controls.start({
                 opacity: opacity,
                 transition: {

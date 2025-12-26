@@ -2,10 +2,13 @@ import React from 'react'
 import { PROJECTS } from '../constants'
 import { CyberCard } from './ui/CyberCard'
 import { ExternalLink, Code } from 'lucide-react'
+import { FaGithub, FaGlobe } from 'react-icons/fa'
 import { useImageModal } from '../context/ImageModalContext'
+import { useProjectDetails } from '../context/ProjectDetailsContext'
 
 export const ProjectShowcase: React.FC = () => {
   const { openModal } = useImageModal()
+  const { openProject } = useProjectDetails()
 
   return (
     <section id="projects" className="py-20 px-6 max-w-5xl mx-auto">
@@ -19,7 +22,13 @@ export const ProjectShowcase: React.FC = () => {
 
       <div className="grid lg:grid-cols-2 gap-8">
         {PROJECTS.map((project, idx) => (
-          <CyberCard key={idx} title={`PROJECT_${idx + 1} // ${project.status}`} className="h-full flex flex-col">
+          <CyberCard
+            key={idx}
+            title={`PROJECT_${idx + 1} // ${project.status}`}
+            className="h-full flex flex-col cursor-pointer"
+            layoutId={`project-card-${project.title}`}
+            onClick={() => openProject(project, idx, 2, PROJECTS)}
+          >
             <div className="flex justify-between items-start mb-4">
               <div>
                 {project.type && (
@@ -37,9 +46,10 @@ export const ProjectShowcase: React.FC = () => {
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                   className="p-2 bg-white/5 hover:bg-cyber-cyan hover:text-black rounded-full transition-all"
                 >
-                  <ExternalLink size={18} />
+                  {project.link.includes('github.com') ? <FaGithub size={18} /> : <FaGlobe size={18} />}
                 </a>
               )}
             </div>
@@ -57,7 +67,10 @@ export const ProjectShowcase: React.FC = () => {
                     loading="lazy"
                     decoding="async"
                     alt={`${project.title} screenshot ${iIdx + 1}`}
-                    onClick={() => openModal(img, `${project.title} screenshot ${iIdx + 1}`)}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      openModal(img, `${project.title} screenshot ${iIdx + 1}`)
+                    }}
                     className="h-48 w-auto rounded border border-white/10 flex-shrink-0 snap-center transition-transform duration-300 hover:scale-110 cursor-pointer hover:border-cyber-cyan/50"
                   />
                 ))}

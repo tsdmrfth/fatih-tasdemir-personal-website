@@ -14,6 +14,7 @@ export interface Project {
   status?: 'Current' | 'Completed' | 'Active'
   images?: string[]
   platforms?: string
+  showWebview?: boolean
 }
 
 export interface Experience {
@@ -25,12 +26,21 @@ export interface Experience {
   images?: string[]
   products?: {
     name: string
+    description?: string
     links?: {
       android?: string
       ios?: string
       apk?: string
       images?: string[]
     }
+    deployments?: {
+      name: string
+      links: {
+        android?: string
+        ios?: string
+        apk?: string
+      }
+    }[]
   }[]
 }
 

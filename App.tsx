@@ -9,28 +9,34 @@ import { Education } from './components/Education'
 import { FreelanceProjects } from './components/FreelanceProjects'
 import { ContactTerminal } from './components/ContactTerminal'
 import { ImageModalProvider } from './context/ImageModalContext'
+import { ProjectDetailsProvider } from './context/ProjectDetailsContext'
+import { ProjectDetailsOverlay } from './components/ProjectDetailsOverlay'
 
 function App() {
   return (
-    <ImageModalProvider>
-      <div className="relative bg-cyber-black min-h-screen text-gray-100 font-sans selection:bg-cyber-cyan/30 selection:text-white">
-        <div className="scanline" />
-        <div className="fixed inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
+    <ProjectDetailsProvider>
+      <ImageModalProvider>
+        <div className="relative bg-cyber-black min-h-screen text-gray-100 font-sans selection:bg-cyber-cyan/30 selection:text-white">
+          <div className="scanline" />
+          <div className="fixed inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
 
-        <Navbar />
+          <Navbar />
 
-        <main className="relative z-10 flex flex-col gap-0">
-          <Hero />
-          <Bio />
-          <SkillsMatrix />
-          <ProjectShowcase />
-          <ExperienceTimeline />
-          <Education />
-          <FreelanceProjects />
-          <ContactTerminal />
-        </main>
-      </div>
-    </ImageModalProvider>
+          <main className="relative z-10 flex flex-col gap-0">
+            <Hero />
+            <Bio />
+            <SkillsMatrix />
+            <ProjectShowcase />
+            <ExperienceTimeline />
+            <Education />
+            <FreelanceProjects />
+            <ContactTerminal />
+          </main>
+
+          <ProjectDetailsOverlay />
+        </div>
+      </ImageModalProvider>
+    </ProjectDetailsProvider>
   )
 }
 

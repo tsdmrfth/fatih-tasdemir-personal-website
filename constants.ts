@@ -26,6 +26,7 @@ export const PROJECTS: Project[] = [
       "Key Features: Real-time trade signal broadcasting (WebSockets), secure JWT authentication, and automated AI confidence scoring loops."
     ],
     link: "https://traider.social",
+    showWebview: true,
     images: [
       "/assets/traider/image1.png",
       "/assets/traider/image2.png",
@@ -45,6 +46,7 @@ export const PROJECTS: Project[] = [
       "Integrated Sentry for error monitoring and Hotjar for user behavior analytics to optimize UX/UI."
     ],
     link: "https://lighter-coin.com",
+    showWebview: true,
     images: [
       "assets/lighter-coin/image1.png",
       "assets/lighter-coin/image2.png",
@@ -61,9 +63,10 @@ export const PROJECTS: Project[] = [
     highlights: [
       "Deployed the responsive React frontend on Netlify, featuring a high-performance Canvas rendering engine for smooth 60fps animations.",
       "Architected a custom Node.js WebSocket backend to handle bidirectional communication and synchronize game state across clients.",
-      "Designed a flexible rule configuration system, allowing users to define custom ant behaviors and modify simulation parameters in real-time."
+      "Designer of a flexible rule configuration system, allowing users to define custom ant behaviors and modify simulation parameters in real-time."
     ],
     link: "https://tsdmrfth-langtons-ant.netlify.app",
+    showWebview: true,
     images: [
       "assets/langtons-ant/image1.png",
       "assets/langtons-ant/image2.png",
@@ -113,32 +116,38 @@ export const EXPERIENCE: Experience[] = [
     ],
     products: [
       {
-        name: "MOVE by Fleet Operations (England and Northern Ireland)",
-        links: {
-          android: "https://play.google.com/store/apps/details?id=com.combiine.fleetops",
-          ios: "https://apps.apple.com/app/move-by-fleet-operations/id1562643472"
-        }
-      },
-      {
-        name: "MOVE by Traxall UK (England)",
-        links: {
-          android: "https://play.google.com/store/apps/details?id=com.combiine.traxall",
-          ios: "https://apps.apple.com/app/move-by-traxall-uk/id1603866196"
-        }
-      },
-      {
-        name: "Traxall Germany (Germany)",
-        links: {
-          android: "https://play.google.com/store/apps/details?id=de.combiine.traxall",
-          ios: "https://apps.apple.com/app/traxall-germany/id6739236245"
-        }
-      },
-      {
-        name: "Combiine (England)",
-        links: {
-          android: "https://play.google.com/store/apps/details?id=com.combiine",
-          ios: "https://apps.apple.com/app/combiine/id1616806880"
-        }
+        name: "Combiine White Label Application",
+        description: "A robust, scalable white-label solution designed to power multiple customized enterprise applications from a single unified codebase. \n\nKey Engineering Features:\n• Modular Architecture: Optimized for maintainability and rapid feature rollout across different client configurations.\n• Multi-Language Support: Fully integrated internalization (i18n) handling dynamic content for diverse regions.\n• Performance: Rigorously profiled to minimize memory usage and load times ensuring smooth 60fps performance.\n• CI/CD Integration: Automated pipelines streaming delivery to both Google Play and App Store for multiple app flavors.\n• Feature Flags: Dynamic configuration allowing granular control over features per tenant.",
+        deployments: [
+          {
+            name: "MOVE by Fleet Operations (England and Northern Ireland)",
+            links: {
+              android: "https://play.google.com/store/apps/details?id=com.combiine.fleetops",
+              ios: "https://apps.apple.com/app/move-by-fleet-operations/id1562643472"
+            }
+          },
+          {
+            name: "MOVE by Traxall UK (England)",
+            links: {
+              android: "https://play.google.com/store/apps/details?id=com.combiine.traxall",
+              ios: "https://apps.apple.com/app/move-by-traxall-uk/id1603866196"
+            }
+          },
+          {
+            name: "Traxall Germany (Germany)",
+            links: {
+              android: "https://play.google.com/store/apps/details?id=de.combiine.traxall",
+              ios: "https://apps.apple.com/app/traxall-germany/id6739236245"
+            }
+          },
+          {
+            name: "Combiine (England)",
+            links: {
+              android: "https://play.google.com/store/apps/details?id=com.combiine",
+              ios: "https://apps.apple.com/app/combiine/id1616806880"
+            }
+          }
+        ]
       }
     ]
   },
@@ -148,10 +157,41 @@ export const EXPERIENCE: Experience[] = [
     location: "Istanbul, Türkiye",
     period: "10/2017 – 03/2020",
     description: [
-      "Developed and maintained two flagship applications: EvdekiBakicim (Android APK) and EvdekiBakicim Kurumsal (Android APK).",
+      "Developed and maintained two flagship applications: EvdekiBakicim and EvdekiBakicim Kurumsal.",
       "Created a shared Redux-based module to standardize state management across multiple apps.",
       "Built custom Native Modules to address hardware-specific requirements and improve integration.",
       "Designed CI/CD pipelines to automate build/distribution, significantly reducing deployment time."
+    ],
+    products: [
+      {
+        name: "EvdekiBakicim (Platform Inactive)",
+        description: "Evdeki Bakıcım en güvenilir bakım hizmetini, en hızlı şekilde bulmanızı sağlar.\n\nEvdekiBakıcım.com olarak tüm hizmetlerimizde tek bir kuralımız var. Kendi evimizi ve ailemizi emanet etmeyeceğimiz hiç kimse ile çalışmıyoruz. Size ve sevdiklerinize karşı olan sorumluluğumuzun bilincindeyiz.\n\nEvdekiBakıcım platformunda ihtiyaç duyulan bakım kriterlerini girerek 4 kolay aşamada hayal ettiğiniz uzman bakıcıya ulaşırsınız. Alternatif olarak telefonla bize ulaşabilir ya da mobil uygulamamızı kullanarak bizim size ulaşmamızı talep edebilirsiniz. EvdekiBakıcım, ücretsiz olarak oluşturduğunuz talebinizi bakıcılarımızla paylaşır ve bakıcıların cevabını kişisel sayfanızdan takip edersiniz. Hangi bakıcı ile çalışmak istediğinizi çağrı merkezimiz ile beraber kararlaştırdıktan sonra talebiniz randevuya dönüşür. Siz de gözünüz arkada kalmadan kaliteli hizmetin takibini mobil uygulamamız aracılığıyla yaparsınız.",
+        links: {
+          apk: "https://apkpure.com/tr/evdekibakicim/com.fratelli.evdekibakicim",
+          images: [
+            "/assets/evdekibakicim/image1.jpg",
+            "/assets/evdekibakicim/image2.jpg",
+            "/assets/evdekibakicim/image3.jpg",
+            "/assets/evdekibakicim/image4.jpg",
+            "/assets/evdekibakicim/image5.jpg",
+            "/assets/evdekibakicim/image6.jpg"
+          ]
+        }
+      },
+      {
+        name: "EvdekiBakicim Kurumsal (Platform Inactive)",
+        description: "EvdekiBakıcım ile kurumsal ortaklık kuran şirketlerin çalışanları, EvdekiBakıcım Kurumsal uygulaması sayesinde hizmetlerimizden ve sağladığımız diğer avantajlardan kolaylıkla yararlanabilirler.\n\nPlatformumuza uygulama üzerinden kurumsal e-posta hesaplarınızla ücretsiz kayıt olup ilan vererek ihtiyaç duyduğunuz bakım hizmetini alabilirsiniz. Aradığınız kriterlere uygun kişilerle iletişime geçerek işe alım sürecini yönetebilirsiniz.\n\nPlatformumuzda aşağıdaki kategorilerde hizmet veren uzmanlarımız bulunmaktadır:\n- Bebek bakıcısı\n- Çocuk bakıcısı\n- Yaşlı bakıcısı\n- Oyun ablası/abisi\n- Özel ders",
+        links: {
+          apk: "https://apkpure.com/tr/evdekibakicim/com.eb_corporate_rn",
+          images: [
+            "/assets/evdekibakicim-kurumsal/image1.jpg",
+            "/assets/evdekibakicim-kurumsal/image2.jpg",
+            "/assets/evdekibakicim-kurumsal/image3.jpg",
+            "/assets/evdekibakicim-kurumsal/image4.jpg",
+            "/assets/evdekibakicim-kurumsal/image5.jpg"
+          ]
+        }
+      }
     ]
   }
 ]
@@ -250,6 +290,28 @@ export const FREELANCE_PROJECTS: Project[] = [
       "/assets/cekici-cagir/image1.png",
       "/assets/cekici-cagir/image2.png",
       "/assets/cekici-cagir/image3.png"
+    ]
+  },
+  {
+    title: "LeoFun",
+    description: "Online casino platform offering slots, baccarat, blackjack, and roulette with full Japanese language support. Features a unified codebase delivering a seamless experience across Mobile, Tablet, and Web.",
+    platforms: "Android (Phone | Tablet) | Web",
+    tech: ["Expo Router", "React Native", "TypeScript", "Mocha", "react-native-web", "react-native-reanimated", "react-native-gesture-handler"],
+    links: {
+      android: "https://play.google.com/store/apps/details?id=com.leo.fun&hl=en"
+    },
+    images: [
+      "/assets/leofun/mobile/image1.png",
+      "/assets/leofun/mobile/image2.png",
+      "/assets/leofun/mobile/image3.png",
+      "/assets/leofun/mobile/image4.png",
+      "/assets/leofun/tablet/image5.png",
+      "/assets/leofun/tablet/image6.png",
+      "/assets/leofun/tablet/image7.png",
+      "/assets/leofun/tablet/image8.png",
+      "/assets/leofun/web/image1.png",
+      "/assets/leofun/web/image2.png",
+      "/assets/leofun/web/image3.png"
     ]
   }
 ]

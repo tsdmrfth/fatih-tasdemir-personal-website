@@ -5,14 +5,18 @@ interface CyberCardProps {
   children: ReactNode
   className?: string
   title?: string
+  layoutId?: string
+  onClick?: () => void
 }
 
-export const CyberCard: React.FC<CyberCardProps> = ({ children, className = "", title }) => {
+export const CyberCard: React.FC<CyberCardProps> = ({ children, className = "", title, layoutId, onClick }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={layoutId ? false : { opacity: 0, y: 20 }}
+      whileInView={layoutId ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      layoutId={layoutId}
+      onClick={onClick}
       className={`relative p-[1px] group ${className}`}
     >
       {/* Animated Border Gradient */}

@@ -1,7 +1,8 @@
 import React from 'react'
 import { EXPERIENCE } from '../constants'
 import { CyberCard } from './ui/CyberCard'
-import { MapPin, Calendar, ExternalLink } from 'lucide-react'
+import { MapPin, Calendar } from 'lucide-react'
+import { FaAndroid, FaApple } from 'react-icons/fa'
 import { useImageModal } from '../context/ImageModalContext'
 
 export const ExperienceTimeline: React.FC = () => {
@@ -69,27 +70,91 @@ export const ExperienceTimeline: React.FC = () => {
               {exp.products && exp.products.length > 0 && (
                 <div className="mt-6 pt-4 border-t border-white/5">
                   <h4 className="text-xs font-mono text-gray-500 mb-3 uppercase tracking-wider">Related_Deployments:</h4>
-                  <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="grid gap-6 grid-cols-1">
                     {exp.products.map((prod, pIdx) => (
-                      <div key={pIdx} className="bg-black/20 p-3 rounded border border-white/5 hover:border-white/10 transition-colors">
-                        <p className="text-white text-sm font-bold mb-2">{prod.name}</p>
-                        <div className="flex gap-3">
-                          {prod.links.android && (
-                            <a href={prod.links.android} target="_blank" rel="noreferrer" className="text-xs text-cyber-cyan hover:underline flex items-center gap-1">
-                              Android <ExternalLink size={10} />
-                            </a>
-                          )}
-                          {prod.links.ios && (
-                            <a href={prod.links.ios} target="_blank" rel="noreferrer" className="text-xs text-cyber-magenta hover:underline flex items-center gap-1">
-                              iOS <ExternalLink size={10} />
-                            </a>
-                          )}
-                          {prod.links.apk && (
-                            <a href={prod.links.apk} target="_blank" rel="noreferrer" className="text-xs text-yellow-400 font-mono hover:underline flex items-center gap-1">
-                              APK <ExternalLink size={10} />
-                            </a>
-                          )}
-                        </div>
+                      <div key={pIdx} className="bg-black/20 p-6 rounded border border-white/5 hover:border-white/10 transition-colors">
+                        <p className="text-white text-lg font-bold mb-4">{prod.name}</p>
+                        {prod.description && (
+                          <p className="text-gray-400 text-sm mb-6 whitespace-pre-wrap leading-relaxed">
+                            {prod.description}
+                          </p>
+                        )}
+
+                        {/* Product Specific Images */}
+                        {prod.links?.images && prod.links.images.length > 0 && (
+                          <div className="mb-6 flex gap-4 overflow-x-auto py-4 px-4 -mx-4 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-cyber-cyan/30 scrollbar-track-transparent">
+                            {prod.links.images.map((img, iIdx) => (
+                              <img
+                                key={iIdx}
+                                src={img}
+                                loading="lazy"
+                                decoding="async"
+                                alt={`${prod.name} screenshot ${iIdx + 1}`}
+                                onClick={() => openModal(img, `${prod.name} screenshot ${iIdx + 1}`)}
+                                className="h-80 w-auto min-w-[160px] object-fit rounded border border-white/10 flex-shrink-0 snap-center transition-transform duration-300 hover:scale-105 cursor-pointer hover:border-cyber-cyan/50"
+                              />
+                            ))}
+                          </div>
+                        )}
+
+                        {/* Direct Links (Legacy/Simple Products) */}
+                        {prod.links && (
+                          <div className="flex gap-3 mb-2">
+                            {prod.links.android && (
+                              <a href={prod.links.android} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-[#3DDC84]/30 bg-[#3DDC84]/10 text-[#3DDC84] hover:bg-[#3DDC84]/20 hover:border-[#3DDC84]/50 transition-all text-xs font-mono tracking-wider">
+                                <FaAndroid size={14} />
+                                <span>Android</span>
+                              </a>
+                            )}
+                            {prod.links.ios && (
+                              <a href={prod.links.ios} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-white/20 bg-white/10 text-white hover:bg-white/20 hover:border-white/40 transition-all text-xs font-mono tracking-wider">
+                                <FaApple size={14} />
+                                <span>iOS</span>
+                              </a>
+                            )}
+                            {prod.links.apk && (
+                              <a href={prod.links.apk} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-[#3DDC84]/30 bg-[#3DDC84]/10 text-[#3DDC84] hover:bg-[#3DDC84]/20 hover:border-[#3DDC84]/50 transition-all text-xs font-mono tracking-wider">
+                                <FaAndroid size={14} />
+                                <span>APK</span>
+                              </a>
+                            )}
+                          </div>
+                        )}
+
+                        {/* White Label Deployments Grid */}
+                        {prod.deployments && (
+                          <div className="grid gap-4 mt-6">
+                            {prod.deployments.map((deployment, depIdx) => (
+                              <div key={depIdx} className="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-white/10 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                <p className="text-white font-bold text-sm">{deployment.name}</p>
+                                <div className="flex gap-3">
+                                  {deployment.links.android && (
+                                    <a
+                                      href={deployment.links.android}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="w-10 h-10 flex items-center justify-center rounded-md border border-[#3DDC84]/30 bg-[#3DDC84]/10 text-[#3DDC84] hover:bg-[#3DDC84]/20 hover:border-[#3DDC84]/50 transition-all"
+                                      aria-label="Android App"
+                                    >
+                                      <FaAndroid size={20} />
+                                    </a>
+                                  )}
+                                  {deployment.links.ios && (
+                                    <a
+                                      href={deployment.links.ios}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="w-10 h-10 flex items-center justify-center rounded-md border border-white/20 bg-white/10 text-white hover:bg-white/20 hover:border-white/40 transition-all"
+                                      aria-label="iOS App"
+                                    >
+                                      <FaApple size={20} />
+                                    </a>
+                                  )}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>

@@ -11,6 +11,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
     rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg?v=5" />
+  <link rel="mask-icon" href="/favicon.svg?v=5" color="#00f0ff" />
   <script>
     tailwind.config = {
       theme: {
@@ -90,6 +92,48 @@
 
     ::-webkit-scrollbar-thumb:hover {
       background: #00f0ff;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Swiper pagination custom styles */
+    .swiper-pagination {
+      z-index: 50 !important;
+      position: relative !important;
+    }
+
+    .swiper-pagination-bullet {
+      width: 4rem !important;
+      height: 0.25rem !important;
+      border-radius: 0 !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+      opacity: 1 !important;
+      transition: none !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: rgb(0, 240, 255) !important;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.6) !important;
+      animation: swiper-progress 5000ms linear forwards !important;
+    }
+
+    @keyframes swiper-progress {
+      from {
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      to {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
     }
   </style>
   <div id="root"></div>
