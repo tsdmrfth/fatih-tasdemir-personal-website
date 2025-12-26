@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
       "Key Features: Real-time trade signal broadcasting (WebSockets), secure JWT authentication, and automated AI confidence scoring loops."
     ],
     link: "https://traider.social",
-    showWebview: true,
+    showWebview: false,
     images: [
       "/assets/traider/image1.png",
       "/assets/traider/image2.png",
@@ -239,6 +239,12 @@ export const FREELANCE_PROJECTS: Project[] = [
     title: "Getlug",
     description: "Global zero-commission platform connecting travelers for package delivery and local support (interpretation, business visits).",
     platforms: "Android | iOS",
+    tech: ["React Native", "Redux", "Node.js", "Firebase"],
+    highlights: [
+      "Architected a peer-to-peer delivery ecosystem connecting travelers with local package delivery needs.",
+      "Integrated multi-language support (English, Russian, Turkish) for global accessibility.",
+      "Implemented real-time chat and push notifications for order progress tracking."
+    ],
     links: {
       android: "https://play.google.com/store/apps/details?id=co.meridyen.getlug&hl=en",
       ios: "https://apps.apple.com/tr/app/getlug/id1604088099"
@@ -255,6 +261,12 @@ export const FREELANCE_PROJECTS: Project[] = [
     title: "LookingForCarPark",
     description: "Real-time parking finder.",
     platforms: "Android | iOS",
+    tech: ["React Native", "Google Maps API", "Node.js"],
+    highlights: [
+      "Developed a real-time parking finder app with deep Google Maps API integration.",
+      "Implemented location-based search and granular filter systems for nearby car parks.",
+      "Designed a responsive UI optimized for on-the-go driver interactions."
+    ],
     links: {
       android: "https://play.google.com/store/apps/details?id=com.lookingforcarpark.app&hl=en",
       ios: "https://apps.apple.com/gb/app/lookingforcarpark/id1509443150"
@@ -269,6 +281,12 @@ export const FREELANCE_PROJECTS: Project[] = [
     title: "Kader Kahini",
     description: "Card fortune app.",
     platforms: "Android APK",
+    tech: ["React Native", "React Native Reanimated", "Context API"],
+    highlights: [
+      "Developed an interactive card fortune-telling experience with custom animations built from scratch using Reanimated.",
+      "Optimized for offline performance and lightweight APK distribution (under 15MB).",
+      "Built a custom randomization engine for varied and engaging user results."
+    ],
     links: {
       apk: "https://apkpure.com/tr/kader-kahini/com.improv.kader_kahini"
     },
@@ -282,6 +300,12 @@ export const FREELANCE_PROJECTS: Project[] = [
     title: "ÇekiciÇağır",
     description: "Roadside assistance service.",
     platforms: "iOS",
+    tech: ["React Native", "Geolocation", "Pusher"],
+    highlights: [
+      "Built a location-based roadside assistance request platform for rapid service matching.",
+      "Implemented real-time provider tracking using Geolocation and Pusher channels.",
+      "Streamlined the service request flow to minimize user input during emergencies."
+    ],
     links: {
       ios: "https://apps.apple.com/app/%C3%A7ekici%C3%A7a%C4%9F%C4%B1r/id1445298041"
     },
@@ -297,6 +321,11 @@ export const FREELANCE_PROJECTS: Project[] = [
     description: "Online casino platform offering slots, baccarat, blackjack, and roulette with full Japanese language support. Features a unified codebase delivering a seamless experience across Mobile, Tablet, and Web.",
     platforms: "Android (Phone | Tablet) | Web",
     tech: ["Expo Router", "React Native", "TypeScript", "Mocha", "react-native-web", "react-native-reanimated", "react-native-gesture-handler"],
+    highlights: [
+      "Engineered a high-performance casino lobby with real-time game state synchronization.",
+      "Authored a unified codebase supporting Phone, Tablet, and Web via react-native-web.",
+      "Implemented strict security protocols for transaction handling and user data protection."
+    ],
     links: {
       android: "https://play.google.com/store/apps/details?id=com.leo.fun&hl=en"
     },
