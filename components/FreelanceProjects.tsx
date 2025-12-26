@@ -1,10 +1,13 @@
 import React from 'react'
 import { FREELANCE_PROJECTS } from '../constants'
 import { CyberCard } from './ui/CyberCard'
-import { ExternalLink } from 'lucide-react'
 import { FaAndroid, FaApple } from 'react-icons/fa'
 import { useImageModal } from '../context/ImageModalContext'
 import { useProjectDetails } from '../context/ProjectDetailsContext'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 export const FreelanceProjects: React.FC = () => {
     const { openModal } = useImageModal()
@@ -74,21 +77,41 @@ export const FreelanceProjects: React.FC = () => {
                             </div>
                             <p className="text-gray-400 text-sm mb-4 min-h-[40px]">{project.description}</p>
                             {project.images && project.images.length > 0 && (
-                                <div className="flex gap-4 overflow-x-auto py-4 px-4 -mx-4 mb-0 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-cyber-cyan/30 scrollbar-track-transparent">
-                                    {project.images.map((img, iIdx) => (
-                                        <img
-                                            key={iIdx}
-                                            src={img}
-                                            loading="lazy"
-                                            decoding="async"
-                                            alt={`${project.title} screenshot ${iIdx + 1}`}
-                                            onClick={(e) => {
-                                                e.stopPropagation()
-                                                openModal(img, `${project.title} screenshot ${iIdx + 1}`)
-                                            }}
-                                            className="h-64 w-auto min-w-[140px] max-w-[400px] object-fit rounded border border-white/10 flex-shrink-0 snap-center transition-transform duration-300 hover:scale-110 cursor-pointer hover:border-cyber-cyan/50"
-                                        />
-                                    ))}
+                                <div className="py-4 -mx-4 mb-0 group/swiper">
+                                    <Swiper
+                                        modules={[Autoplay, Pagination]}
+                                        spaceBetween={16}
+                                        slidesPerView="auto"
+                                        initialSlide={0}
+                                        centeredSlides={false}
+                                        loop={project.images.length > 1}
+                                        autoplay={{
+                                            delay: 3000,
+                                            disableOnInteraction: false,
+                                            pauseOnMouseEnter: true
+                                        }}
+                                        pagination={project.images.length > 1 ? {
+                                            clickable: true,
+                                            dynamicBullets: true,
+                                        } : false}
+                                        className="w-full !px-4"
+                                    >
+                                        {project.images.map((img, iIdx) => (
+                                            <SwiperSlide key={iIdx} className="!w-auto">
+                                                <img
+                                                    src={img}
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                    alt={`${project.title} screenshot ${iIdx + 1}`}
+                                                    onClick={(e) => {
+                                                        e.stopPropagation()
+                                                        openModal(img, `${project.title} screenshot ${iIdx + 1}`)
+                                                    }}
+                                                    className="h-64 w-auto min-w-[140px] max-w-[400px] object-fit rounded border border-white/10 transition-transform duration-300 hover:scale-105 cursor-pointer hover:border-cyber-cyan/50 shadow-lg shadow-black/40"
+                                                />
+                                            </SwiperSlide>
+                                        ))}
+                                    </Swiper>
                                 </div>
                             )}
                         </div>

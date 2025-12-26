@@ -182,7 +182,7 @@ export const ProjectDetailsOverlay: React.FC = () => {
                                                                     transition={{ duration: 0.5 }}
                                                                     src={img}
                                                                     alt={`${selectedProject.title} ${i + 1}`}
-                                                                    className="max-w-full max-h-full w-auto h-auto object-contain shadow-[0_0_80px_rgba(0,240,255,0.15),0_20px_60px_rgba(0,0,0,0.9)] border border-cyber-cyan/10"
+                                                                    className="h-full w-auto max-w-full object-contain shadow-[0_0_80px_rgba(0,240,255,0.15),0_20px_60px_rgba(0,0,0,0.9)] border border-cyber-cyan/10"
                                                                 />
                                                             </div>
                                                         </SwiperSlide>
@@ -190,27 +190,29 @@ export const ProjectDetailsOverlay: React.FC = () => {
                                                 </Swiper>
 
                                                 {/* Custom Pagination Indicators */}
-                                                <div className="flex justify-center gap-2 mt-4 z-30" key={selectedProject.title}>
-                                                    {images.map((_, i) => (
-                                                        <div
-                                                            key={i}
-                                                            className="w-16 h-1 bg-white/10 rounded-none relative overflow-hidden cursor-pointer group"
-                                                            onClick={() => swiperRef.current?.slideToLoop(i)}
-                                                        >
-                                                            <div className="absolute inset-0 bg-white/20" />
-                                                            <motion.div
-                                                                key={`${i}-${currentSlideIndex === i}`}
-                                                                className="absolute inset-0 bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]"
-                                                                initial={i < currentSlideIndex ? { width: "100%" } : { width: "0%" }}
-                                                                animate={{ width: i <= currentSlideIndex ? "100%" : "0%" }}
-                                                                transition={{
-                                                                    duration: i === currentSlideIndex ? AUTOPLAY_DELAY / 1000 : 0.3,
-                                                                    ease: i === currentSlideIndex ? "linear" : "easeInOut"
-                                                                }}
-                                                            />
-                                                        </div>
-                                                    ))}
-                                                </div>
+                                                {images.length > 1 && (
+                                                    <div className="flex justify-center gap-2 mt-4 z-30" key={selectedProject.title}>
+                                                        {images.map((_, i) => (
+                                                            <div
+                                                                key={i}
+                                                                className="w-16 h-1 bg-white/10 rounded-none relative overflow-hidden cursor-pointer group"
+                                                                onClick={() => swiperRef.current?.slideToLoop(i)}
+                                                            >
+                                                                <div className="absolute inset-0 bg-white/20" />
+                                                                <motion.div
+                                                                    key={`${i}-${currentSlideIndex === i}`}
+                                                                    className="absolute inset-0 bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+                                                                    initial={i < currentSlideIndex ? { width: "100%" } : { width: "0%" }}
+                                                                    animate={{ width: i <= currentSlideIndex ? "100%" : "0%" }}
+                                                                    transition={{
+                                                                        duration: i === currentSlideIndex ? AUTOPLAY_DELAY / 1000 : 0.3,
+                                                                        ease: i === currentSlideIndex ? "linear" : "easeInOut"
+                                                                    }}
+                                                                />
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                )}
                                             </>
                                         )
                                 }
