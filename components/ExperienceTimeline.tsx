@@ -61,7 +61,7 @@ export const ExperienceTimeline: React.FC = () => {
                       loading="lazy"
                       decoding="async"
                       alt={`${exp.company} screenshot ${iIdx + 1}`}
-                      onClick={() => openModal(img, `${exp.company} screenshot ${iIdx + 1}`)}
+                      onClick={() => openModal(exp.images || [], iIdx, `${exp.company} screenshot ${iIdx + 1}`)}
                       className="h-64 w-36 object-cover rounded border border-white/10 flex-shrink-0 snap-center transition-transform duration-300 hover:scale-110 cursor-pointer hover:border-cyber-cyan/50"
                     />
                   ))}
@@ -90,7 +90,7 @@ export const ExperienceTimeline: React.FC = () => {
                                 loading="lazy"
                                 decoding="async"
                                 alt={`${prod.name} screenshot ${iIdx + 1}`}
-                                onClick={() => openModal(img, `${prod.name} screenshot ${iIdx + 1}`)}
+                                onClick={() => openModal(prod.links?.images || [], iIdx, `${prod.name} screenshot ${iIdx + 1}`)}
                                 className="h-80 w-auto min-w-[160px] object-fit rounded border border-white/10 flex-shrink-0 snap-center transition-transform duration-300 hover:scale-105 cursor-pointer hover:border-cyber-cyan/50"
                               />
                             ))}
