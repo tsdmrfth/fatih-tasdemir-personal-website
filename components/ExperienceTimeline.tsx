@@ -10,8 +10,8 @@ export const ExperienceTimeline: React.FC = () => {
 
   return (
     <section id="experience" className="py-20 px-6 max-w-5xl mx-auto">
-      <div className="flex items-center gap-4 mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
+      <div className="flex items-center gap-4 mb-8 sm:mb-12">
+        <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white break-all">
           <span className="text-cyber-cyan font-mono mr-2">04.</span>
           CAREER_HISTORY
         </h2>
@@ -25,9 +25,9 @@ export const ExperienceTimeline: React.FC = () => {
             <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 bg-cyber-cyan rounded-full shadow-[0_0_10px_#00f0ff]" />
 
             <div className="mb-2">
-              <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-cyber-cyan transition-colors inline-flex items-center gap-3">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-cyber-cyan transition-colors flex flex-wrap items-center gap-2 sm:gap-3">
                 {exp.company}
-                <span className="text-xs font-mono px-2 py-1 rounded border border-cyber-magenta/30 text-cyber-magenta bg-cyber-magenta/10">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded border border-cyber-magenta/30 text-cyber-magenta bg-cyber-magenta/10 whitespace-nowrap">
                   {exp.role}
                 </span>
               </h3>
@@ -70,7 +70,7 @@ export const ExperienceTimeline: React.FC = () => {
               {exp.products && exp.products.length > 0 && (
                 <div className="mt-6 pt-4 border-t border-white/5">
                   <h4 className="text-xs font-mono text-gray-500 mb-3 uppercase tracking-wider">Related_Deployments:</h4>
-                  <div className="grid gap-6 grid-cols-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {exp.products.map((prod, pIdx) => (
                       <div key={pIdx} className="bg-black/20 p-6 rounded border border-white/5 hover:border-white/10 transition-colors">
                         <p className="text-white text-lg font-bold mb-4">{prod.name}</p>

@@ -5,8 +5,8 @@ import { BIO_SUMMARY } from '../constants'
 export const Bio: React.FC = () => {
   return (
     <section id="about" className="py-20 px-6 max-w-5xl mx-auto border-x border-white/5">
-      <div className="flex items-center gap-4 mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
+      <div className="flex items-center gap-4 mb-8 sm:mb-12">
+        <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white break-all">
           <span className="text-cyber-cyan font-mono mr-2">01.</span>
           OPERATOR_PROFILE
         </h2>
@@ -32,22 +32,22 @@ export const Bio: React.FC = () => {
 
         <div className="space-y-6">
           <CyberCard title="CORE_SPECS">
-            <ul className="space-y-3 font-mono text-sm text-gray-400">
-              <li className="flex items-baseline gap-6 border-b border-gray-800 pb-2">
-                <span className="w-24 flex-shrink-0">Role</span>
+            <ul className="space-y-4 font-mono text-[10px] xs:text-xs sm:text-sm text-gray-400">
+              <li className="flex items-baseline gap-3 sm:gap-6 border-b border-gray-800 pb-2">
+                <span className="w-16 sm:w-24 flex-shrink-0">Role</span>
                 <span className="text-white">Full Stack & Mobile</span>
               </li>
-              <li className="flex items-baseline gap-6 border-b border-gray-800 pb-2">
-                <span className="w-24 flex-shrink-0">Experience</span>
+              <li className="flex items-baseline gap-3 sm:gap-6 border-b border-gray-800 pb-2">
+                <span className="w-16 sm:w-24 flex-shrink-0">Exp.</span>
                 <span className="text-cyber-cyan">8+ Years</span>
               </li>
-              <li className="flex items-baseline gap-6 border-b border-gray-800 pb-2">
-                <span className="w-24 flex-shrink-0">Location</span>
-                <span className="text-white">Istanbul, Türkiye</span>
+              <li className="flex items-baseline gap-3 sm:gap-6 border-b border-gray-800 pb-2">
+                <span className="w-16 sm:w-24 flex-shrink-0">Loc.</span>
+                <span className="text-white">Istanbul</span>
               </li>
-              <li className="flex items-baseline gap-6">
-                <span className="w-24 flex-shrink-0">Focus</span>
-                <span className="text-cyber-magenta">Enterprise / Scalability</span>
+              <li className="flex items-baseline gap-3 sm:gap-6">
+                <span className="w-16 sm:w-24 flex-shrink-0">Focus</span>
+                <span className="text-cyber-magenta underline decoration-cyber-magenta/30 underline-offset-4">Enterprise</span>
               </li>
             </ul>
           </CyberCard>

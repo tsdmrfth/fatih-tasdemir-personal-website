@@ -5,8 +5,8 @@ import { CyberCard } from './ui/CyberCard'
 export const Education: React.FC = () => {
     return (
         <section id="education" className="py-20 px-6 max-w-5xl mx-auto border-x border-white/5">
-            <div className="flex items-center gap-4 mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <div className="flex items-center gap-4 mb-8 sm:mb-12">
+                <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white break-all">
                     <span className="text-cyber-cyan font-mono mr-2">05.</span>
                     EDUCATION
                 </h2>

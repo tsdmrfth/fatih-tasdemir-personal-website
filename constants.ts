@@ -165,7 +165,7 @@ export const EXPERIENCE: Experience[] = [
     products: [
       {
         name: "EvdekiBakicim (Platform Inactive)",
-        description: "Evdeki Bakıcım en güvenilir bakım hizmetini, en hızlı şekilde bulmanızı sağlar.\n\nEvdekiBakıcım.com olarak tüm hizmetlerimizde tek bir kuralımız var. Kendi evimizi ve ailemizi emanet etmeyeceğimiz hiç kimse ile çalışmıyoruz. Size ve sevdiklerinize karşı olan sorumluluğumuzun bilincindeyiz.\n\nEvdekiBakıcım platformunda ihtiyaç duyulan bakım kriterlerini girerek 4 kolay aşamada hayal ettiğiniz uzman bakıcıya ulaşırsınız. Alternatif olarak telefonla bize ulaşabilir ya da mobil uygulamamızı kullanarak bizim size ulaşmamızı talep edebilirsiniz. EvdekiBakıcım, ücretsiz olarak oluşturduğunuz talebinizi bakıcılarımızla paylaşır ve bakıcıların cevabını kişisel sayfanızdan takip edersiniz. Hangi bakıcı ile çalışmak istediğinizi çağrı merkezimiz ile beraber kararlaştırdıktan sonra talebiniz randevuya dönüşür. Siz de gözünüz arkada kalmadan kaliteli hizmetin takibini mobil uygulamamız aracılığıyla yaparsınız.",
+        description: "A high-growth caregiving marketplace platform connecting families with certified caregivers. \n\nKey Engineering Highlights:\n• Optimized 4-step recruitment workflow for rapid caregiver matching.\n• Integrated real-time tracking for service transparency and safety.\n• Architected shared business logic between client and caregiver interfaces.\n• Streamlined booking management system reducing time-to-hire by 40%.",
         links: {
           apk: "https://apkpure.com/tr/evdekibakicim/com.fratelli.evdekibakicim",
           images: [
@@ -180,7 +180,7 @@ export const EXPERIENCE: Experience[] = [
       },
       {
         name: "EvdekiBakicim Kurumsal (Platform Inactive)",
-        description: "EvdekiBakıcım ile kurumsal ortaklık kuran şirketlerin çalışanları, EvdekiBakıcım Kurumsal uygulaması sayesinde hizmetlerimizden ve sağladığımız diğer avantajlardan kolaylıkla yararlanabilirler.\n\nPlatformumuza uygulama üzerinden kurumsal e-posta hesaplarınızla ücretsiz kayıt olup ilan vererek ihtiyaç duyduğunuz bakım hizmetini alabilirsiniz. Aradığınız kriterlere uygun kişilerle iletişime geçerek işe alım sürecini yönetebilirsiniz.\n\nPlatformumuzda aşağıdaki kategorilerde hizmet veren uzmanlarımız bulunmaktadır:\n- Bebek bakıcısı\n- Çocuk bakıcısı\n- Yaşlı bakıcısı\n- Oyun ablası/abisi\n- Özel ders",
+        description: "A dedicated B2B ecosystem providing corporate employees with premium care services as a workplace benefit. \n\nKey Engineering Highlights:\n• Engineered secure corporate domain verification for exclusive onboarding.\n• Developed specialized recruitment pipelines for enterprise-scale job management.\n• Implemented granular filtering for diverse care categories (Elderly, Child, Tutoring).\n• Scaled the platform to support high-concurrency corporate user loads.",
         links: {
           apk: "https://apkpure.com/tr/evdekibakicim/com.eb_corporate_rn",
           images: [

@@ -11,8 +11,8 @@ export const FreelanceProjects: React.FC = () => {
 
     return (
         <section id="freelance" className="py-20 px-6 max-w-5xl mx-auto border-x border-white/5">
-            <div className="flex items-center gap-4 mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <div className="flex items-center gap-4 mb-8 sm:mb-12">
+                <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white break-all">
                     <span className="text-cyber-cyan font-mono mr-2">06.</span>
                     FREELANCE_PROJECTS
                 </h2>
@@ -90,7 +90,7 @@ export const FreelanceProjects: React.FC = () => {
                                 {project.tech && project.tech.length > 0 && (
                                     <div className="flex flex-wrap gap-2 mb-6 pt-4 border-t border-white/5">
                                         {project.tech.map((tech, tIdx) => (
-                                            <span key={tIdx} className="text-xs font-mono text-cyber-cyan/80 bg-cyber-cyan/10 px-2 py-1">
+                                            <span key={tIdx} className="text-xs font-mono text-cyber-cyan/80 bg-cyber-cyan/10 px-3 py-1.5 border border-cyber-cyan/10">
                                                 {tech}
                                             </span>
                                         ))}

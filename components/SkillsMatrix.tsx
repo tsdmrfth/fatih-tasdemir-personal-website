@@ -7,15 +7,15 @@ export const SkillsMatrix: React.FC = () => {
     <section id="skills" className="py-20 px-6 max-w-5xl mx-auto">
       <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-cyber-cyan to-transparent opacity-50" />
 
-      <div className="flex items-center gap-4 mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
+      <div className="flex items-center gap-4 mb-8 sm:mb-12">
+        <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white break-all">
           <span className="text-cyber-cyan font-mono mr-2">02.</span>
           SYSTEM_DIAGNOSTICS
         </h2>
         <div className="h-[1px] bg-gray-800 flex-grow" />
       </div>
 
-      <div className="grid lg:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {SKILLS.map((skillGroup, idx) => (
           <motion.div
             key={idx}

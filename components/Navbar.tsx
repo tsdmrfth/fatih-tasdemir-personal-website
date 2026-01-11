@@ -74,10 +74,9 @@ export const Navbar: React.FC = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 pointer-events-none"
-    >
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 pointer-events-none">
       <div className="bg-cyber-black/80 backdrop-blur-md border border-white/10 px-6 py-3 rounded-full pointer-events-auto shadow-[0_0_20px_rgba(0,0,0,0.5)]">
-        <ul className="flex items-center gap-6 md:gap-8">
+        <ul className="flex items-center gap-4 sm:gap-6 md:gap-8">
           {NAV_ITEMS.map((item) => {
             const isActive = activeSection === item.id
             const Icon = item.icon
@@ -85,21 +84,20 @@ export const Navbar: React.FC = () => {
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative flex flex-col items-center group h-full justify-center`}
-                >
+                  className={`relative flex flex-col items-center group h-full justify-center`}>
                   {item.id === 'hero' ? (
-                    <span className={`text-2xl font-bold transition-colors duration-300 font-mono ${isActive ? 'text-cyber-cyan' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                    <span className={`text-xl md:text-2xl font-bold transition-colors duration-300 font-mono ${isActive ? 'text-cyber-cyan' : 'text-gray-400 group-hover:text-gray-200'}`}>
                       /
                     </span>
                   ) : (
                     <>
                       {Icon && (
                         <Icon
-                          size={20}
-                          className={`transition-colors duration-300 ${isActive ? 'text-cyber-cyan' : 'text-gray-400 group-hover:text-gray-200'}`}
+                          size={18}
+                          className={`md:w-5 md:h-5 transition-colors duration-300 ${isActive ? 'text-cyber-cyan' : 'text-gray-400 group-hover:text-gray-200'}`}
                         />
                       )}
-                      <span className={`text-[10px] font-mono mt-1 tracking-wider ${isActive ? 'text-cyber-cyan' : 'text-gray-400'}`}>
+                      <span className={`hidden md:block text-[10px] font-mono mt-1 tracking-wider ${isActive ? 'text-cyber-cyan' : 'text-gray-400'}`}>
                         {item.label}
                       </span>
                     </>

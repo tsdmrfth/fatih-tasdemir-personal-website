@@ -5,7 +5,7 @@ export const ContactTerminal: React.FC = () => {
   return (
     <section id="contact" className="py-20 px-6 bg-cyber-dark border-t border-gray-800">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8 text-white">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-white break-words">
           <span className="text-cyber-cyan font-mono mr-2">07.</span>
           <span className="text-cyber-cyan">INITIATE_HANDSHAKE</span>
         </h2>
