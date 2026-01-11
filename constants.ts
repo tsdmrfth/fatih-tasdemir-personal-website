@@ -112,7 +112,7 @@ export const EXPERIENCE: Experience[] = [
       "/assets/combiine/image4.png",
       "/assets/combiine/image5.png",
       "/assets/combiine/image6.png",
-      "/assets/combiine/image7.png"
+      "/assets/combiine/image7.png",
     ],
     products: [
       {
